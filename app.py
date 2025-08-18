@@ -18,18 +18,21 @@ def opcao_invalida():
     main()
 
 def escolher_opcao():
-    opcao_escolhida = int(input('Escolha uma opção: '))
-    match opcao_escolhida:
-        case 1:
-            print('Cadastrar restaurante')
-        case 2:
-            print('Listar restaurantes')
-        case 3:
-            print('Ativar restaurantes')
-        case 4:
-            finalizar_app()
-        case _:
-            opcao_invalida()
+    try:
+        opcao_escolhida = int(input('Escolha uma opção: '))
+        match opcao_escolhida:
+            case 1:
+                print('Cadastrar restaurante')
+            case 2:
+                print('Listar restaurantes')
+            case 3:
+                print('Ativar restaurantes')
+            case 4:
+                finalizar_app()
+            case _:
+                opcao_invalida()
+    except:
+        opcao_invalida()
 
 def main():
     exibir_nome_do_programa()
