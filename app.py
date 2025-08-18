@@ -12,6 +12,11 @@ def exibir_opcoes():
     print('3. Ativar restaurante')
     print('4. Sair\n')
 
+def opcao_invalida():
+    print('Opção Inválida!\n')
+    input('Digite uma tecla para voltar ao menu principal')
+    main()
+
 def escolher_opcao():
     opcao_escolhida = int(input('Escolha uma opção: '))
     match opcao_escolhida:
@@ -24,7 +29,7 @@ def escolher_opcao():
         case 4:
             finalizar_app()
         case _:
-            print('Opção inválida!')
+            opcao_invalida()
 
 def main():
     exibir_nome_do_programa()
